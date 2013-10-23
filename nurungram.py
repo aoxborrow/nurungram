@@ -38,7 +38,7 @@ def index(location_id):
 	view['media'], next = api.location_recent_media(count = 30, location_id = location_id)
 	
 	# render view
-	return render_template('index.j2', **view)
+	return render_template('index.html', **view)
 
 # for running from CLI
 if __name__ == '__main__':

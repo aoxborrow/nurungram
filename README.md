@@ -136,7 +136,7 @@ venv
 	```
 
 
-3. Templates in Flask utilize the widely used Jinja2 engine, which are modelled after Django's templates. They are straight forward, especially if you have any experience with Mustache, Handlebars, etc. I won't spend much time on them except to say that Flask expects them in the `templates` folder and doesn't care what extension you use. It's easy to pass variables as keyword arguments to the `render_template()` method:
+3. Templates in Flask utilize the widely used Jinja2 engine, which are modelled after Django's templates. They are straight forward, especially if you have any experience with Mustache, Handlebars, etc. I won't spend much time on them except to say that Flask expects them in the `templates` folder with an .html extension. It's easy to pass variables as keyword arguments to the `render_template()` method:
 
 	```python
 	@app.route('/hello/<name>')
