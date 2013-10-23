@@ -108,6 +108,53 @@ venv
 (venv)$ heroku open
 ```
 
-8. From the web dashboard you can monitor and scale your app resources, enable add-ons like MongoDB, New Relic, etc.
+9. From the web dashboard you can monitor and scale your app resources, enable add-ons like MongoDB, New Relic, etc.
+
 	**https://dashboard.heroku.com/**
+
+
+### 3. Routes & Templates ###
+
+1. Routes in Flask are simple -- define a method and add a `route()` decorator. For example, in a blog-type app you might have a show_post() method that accepts a numeric post ID. The name of the method is not tied directly to the URI and the method can be re-used internally. Here's how that might look:
+
+	```python
+	@app.route('/post/<int:post_id>')
+	def show_post(post_id):
+	    # code to show the post with the given id, knowing the id is an integer
+	```
+	
+2. You might also want to specify which HTTP methods a route responds to for RESTful apps. Here's an example of a route that might be part of a simple REST API for a blogging platform:
+
+	```python
+	@app.route('/api/v1/post', methods=['POST'])
+	def add_post():
+		# code to add blog post, given proper authentication
+		# content-type must be of type 'application/json'
+		if not request.json:
+			# that ain't right
+		blog_title = request.json['title']
+	```
+
+
+3. Templates in Flask utilize the widely used Jinja2 engine, which are modelled after Django's templates. They are straight forward, especially if you have any experience with Mustache, Handlebars, etc. I won't spend much time on them except to say that Flask expects them in the `templates` folder and doesn't care what extension you use. It's easy to pass variables as keyword arguments to the `render_template()` method:
+
+	```python
+	@app.route('/hello/<name>')
+	def hello(name):
+	    return render_template('hello.html', name=name)
+	```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
