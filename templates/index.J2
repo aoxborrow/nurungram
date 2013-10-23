@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="author" content="Aaron Oxborrow">
+	<meta name="viewport" content="width=device-width">
+	<title>{{ title }} Gram</title>
+	<link rel="stylesheet" href="/static/css/base.css">
+	<link rel="stylesheet" href="/static/css/nuruncam.css">
+</head>
+<body>
+	<header>
+		<h1>{{ title }}&nbsp;<em>Gram</em></h1>
+		<h2>Latitude:&nbsp;{{lat}},&nbsp;&nbsp;Longitude:&nbsp;{{lon}}</h2>
+	</header>
+	<section class="media">
+		{% for image in media %}
+		<a href="{{ image.link }}"><img src="{{ image.images.standard_resolution.url }}"></a>
+		{% endfor %}
+	</section>
+</body>
+</html>
