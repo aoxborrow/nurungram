@@ -1,0 +1,90 @@
+FLASK & HEROKU
+Building NurunCam in only 243 easy steps!
+
+Flask:
+	- a python micro-framework for lightweight web apps
+	- simple to start -- write your whole app in a single file
+	- well suited for RESTful patterns
+	- the right amount of features without bloat (BYODB)
+	- Python!
+
+Heroku:
+	- very clever cloud hosting for apps
+	- free for small instances
+	- built entirely around Git -- "git push" to deploy
+	- CLI "toolbelt" and extensive API
+
+
+1. Install Python. Oh, you're on a Mac? done.
+
+4. Create a free account at Heroku.com
+
+5. Install the Heroku toolbelt
+	https://toolbelt.heroku.com/
+	
+6. Login via the CLI to authenticate:
+	$ heroku login
+	
+7. Make your project folder and minimally a templates and static assets folder:
+	$ mkdir ~/www/nuruncam
+	$ mkdir ~/www/nuruncam/static
+	$ mkdir ~/www/nuruncam/templates
+	$ cd ~/www/nuruncam 
+
+2. Install pip (python package manager):
+	$ sudo easy_install pip
+
+8. Install 'virtualenv' and create your app's Python virtual environment. This allows you to have an isolated environment with its own dependencies and helps make your app portable.
+	$ sudo pip install virtualenv
+	$ virtualenv venv --distribute
+	$ source venv/bin/activate
+	
+9. Install the Python packages we're going to use. We're gonna need Flask (the framework), Gunicorn (the web server), and the Python Instagram client. PIP will automatically install any other dependencies. Note -- these will only be installed in your lil' virtual environment. 
+	(venv)$ pip install Flask gunicorn python-instagram
+	
+	
+10. Finally some coding. Let's say hello.
+
+	nuruncam.py: 
+
+		import os
+		from flask import Flask
+
+		# take a sip
+		app = Flask(__name__)
+
+		# default route
+		@app.route('/')
+		def index():
+			return 'Hello Nurun!'
+
+
+11. Now create a "Procfile" to tell Heroku how to run our web app:
+
+	Procfile:
+
+		web: gunicorn nuruncam:app
+		
+12. Record the Python package requirements for Heroku:
+
+	(venv)$ pip freeze > requirements.txt
+		
+12. Use the Heroku tool "foreman" to start your app and test it in the browser.
+
+	(venv)$ foreman start  (Ctrl-C to stop)
+	
+	http://0.0.0.0:5000/
+	
+13. Let's start tracking our app in Git. Starting with a .gitignore file:
+
+	.gitignore
+	
+		.DS_Store
+		venv
+		*.pyc
+		
+14. Init our 
+	
+
+
+
