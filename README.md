@@ -1,5 +1,5 @@
-#NurunCam#
-###Learning Flask & Heroku in only 243 easy steps!###
+#Official Nurungram®#
+###Learning Flask & Heroku in only 37 easy steps!###
 
 ###Flask:###
 - a Python micro-framework for lightweight web apps, well suited for RESTful patterns
@@ -20,10 +20,10 @@
 	
 2. Make your project folder and minimally a static assets and templates folder:
 ```
-$ mkdir ~/www/nuruncam
-$ mkdir ~/www/nuruncam/static
-$ mkdir ~/www/nuruncam/templates
-$ cd ~/www/nuruncam
+$ mkdir ~/www/nurungram
+$ mkdir ~/www/nurungram/static
+$ mkdir ~/www/nurungram/templates
+$ cd ~/www/nurungram
 ```
 
 3. Install pip (python package manager):
@@ -43,7 +43,7 @@ $ source venv/bin/activate   <--- activate your virtualenv
 (venv)$ pip install Flask gunicorn python-instagram
 ```
 
-6. Finally a little coding. Let's say hello in `nuruncam.py`:
+6. Finally a little coding. Let's say hello in `nurungram.py`:
 
 	```python
 	import os
@@ -67,7 +67,7 @@ $ source venv/bin/activate   <--- activate your virtualenv
 
 2. Create a `Procfile` to tell Heroku how to run our web app:
 ```
-web: gunicorn nuruncam:app
+web: gunicorn nurungram:app
 ```
 		
 3. Record the Python package requirements into `requirements.txt` for Heroku:
@@ -103,7 +103,7 @@ venv
 
 8. Create our Heroku app, supplying a unique name. Deploy via Git(!), then preview your site:
 ```
-(venv)$ heroku apps:create nuruncam
+(venv)$ heroku apps:create nurungram
 (venv)$ git push heroku master
 (venv)$ heroku open
 ```

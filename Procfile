@@ -1,1 +1,1 @@
-web: gunicorn nuruncam:app
+web: gunicorn nurungram:app
