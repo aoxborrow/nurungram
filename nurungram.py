@@ -4,16 +4,17 @@ from instagram import client
 
 # take a sip
 app = Flask(__name__)
+app.config['DEBUG'] = True
 
 # instagram client
 INSTAGRAM_CLIENT_ID = '3bf6b1d83a6a428a85c72ca3e1be8143'
 INSTAGRAM_CLIENT_SECRET = 'ed7d7293228241f089992803adcb4d4a'
 
 # location id for "Nurun"
-INSTAGRAM_LOCATION_ID = 854982
+INSTAGRAM_LOCATION_ID = '854982'
 
 # location id for "Tenderloin National Forest"
-# INSTAGRAM_LOCATION_ID = 4365396
+# INSTAGRAM_LOCATION_ID = '4365396'
 
 # unauthenticated Instagram API
 api = client.InstagramAPI(
@@ -39,3 +40,6 @@ def index(location_id):
 	# render view
 	return render_template('index.j2', **view)
 
+# for running from CLI
+if __name__ == '__main__':
+    app.run()
