@@ -1,0 +1,4 @@
+windowTitle = '${TM_FILEPATH:?${TM_FILEPATH/${CWD}.//}:$TM_DISPLAYNAME}$windowTitleProject$windowTitleSCM'
+showInvisibles = true
+invisiblesMap = "~ "
+exclude = '{$exclude,*.pyc,.DS_Store,venv,.git}'
